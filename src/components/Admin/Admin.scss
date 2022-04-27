@@ -1,0 +1,305 @@
+//Profile
+// .main-profile-header {
+//     display: block !important;
+// }
+.modal-footer {
+    border-top: unset;
+}
+.main-profile-header {
+    background: #2a2e39;
+    border-bottom: unset;
+    padding: 12px 20px;
+    display: block !important;
+    .profile-header {
+        display: flex;
+        justify-content: space-between;
+        .header {
+            h1 {
+                font-size: 28px;
+                font-weight: 500;
+                color: #fff;
+                .active {
+                    font-size: 22px;
+                    padding: 5px 5px;
+                    color: rgb(1, 170, 120);
+                    font-weight: bold;
+                    margin: 2px;
+                    border-radius: 2px;
+                    background: #ffffff21 !important;
+                }
+            }
+        }
+        .profile-btn {
+            .btn-sm:first-child {
+                margin-right: 4px;
+            }
+        }
+    }
+}
+.modal-body {
+    background: #1c2030;
+    .profile-form {
+        .focused {
+            .form-label {
+                .img-1 {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    .profile-img {
+                        border-radius: 60%;
+                        height: 80px;
+                        width: 80px;
+                        object-fit: cover;
+                        padding: 3px;
+                        background-color: #2a2e39;
+                    }
+                    .notification {
+                        color: rgba(255, 255, 255);
+                        padding-left: 3px;
+                        // padding-right: 3px;
+                        &:hover {
+                            color: rgba(255, 255, 255, 0.75);
+                        }
+                    }
+                    .change-profile {
+                        margin-right: 7px;
+                        color: rgba(255, 255, 255);
+                    }
+                }
+            }
+        }
+        .form-group {
+            margin-bottom: 1rem;
+            .form-control {
+                background-color: #2a2e39;
+                border: 1px solid #2a2e39;
+                color: #fff;
+            }
+        }
+        .row {
+            .form-label {
+                color: #fff;
+            }
+        }
+    }
+}
+
+//Change Password
+
+.user {
+    .modal-content {
+        width: 82%;
+        margin: 0 auto;
+        background: #1c2030;
+        padding: 1.25rem;
+        position: absolute;
+        left: auto;
+        right: auto;
+        top: 7rem;
+        .change-pwd {
+            // background: #1c2030;
+            border-bottom: unset;
+            padding: 0 1rem;
+            .pass-header {
+                h2 {
+                    margin-top: 0;
+                    color: rgb(0 123 255);
+                }
+            }
+        }
+        .modal-body {
+            padding: 2px 1rem;
+            .form-change-password {
+                label {
+                    color: #fff;
+                    line-height: 2.4;
+                }
+                .form-control {
+                    background-color: #2a2e39;
+                    border: 1px solid #2a2e39;
+                    color: #fff;
+                    margin-bottom: 1rem;
+                }
+                .input-group-addon {
+                    background: #007bff;
+                    padding: 0px 24px;
+                    margin-bottom: 1rem;
+                    position: absolute;
+                    z-index: 99;
+                    right: 1px;
+
+                    .pass-hide-show {
+                        // position: absolute;
+                        // top: 0;
+                        // right: 19px;
+                        color: #fff;
+                        .eye-icon {
+                            transform: scale(1.4);
+                            cursor: pointer;
+                        }
+                    }
+                    .pass-hide-show:hover {
+                        color: #00fcb6;
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
+        .modal-footer {
+            background: #1c2030;
+            border-top: unset;
+            justify-content: flex-start;
+            padding-top: 0;
+        }
+    }
+}
+
+.close-btn {
+    color: red;
+    height: 34px;
+    vertical-align: top;
+    width: 34px;
+    transition: all 200ms;
+    cursor: pointer;
+}
+//user setting
+
+.user-setting {
+    .modal-content {
+        background: #1c2030;
+        padding: 1.25rem;
+
+        .general-setting {
+            border-bottom: unset;
+            padding: 0;
+            .setting-header {
+                color: #fff;
+                margin-bottom: 2rem;
+                // h3{
+                //     font-size: 1.5rem;
+                // }
+            }
+            .close-btn {
+                position: absolute;
+                left: auto;
+                right: 19px;
+                top: 14px;
+            }
+        }
+        .modal-body {
+            padding: 2px 1rem;
+            .form-change-password {
+                .form-select {
+                   
+                    background-image: url('../../..//public/icon/icons8-sort-down-50.png') ;
+                }
+                .telegram {
+                    display: flex;
+                    margin-bottom: 13px;
+                }
+                label {
+                    color: #fff;
+                    // line-height: 2.4;
+                    display: unset !important;
+                    // line-height: 0 !important;
+                }
+                .icon-2 {
+                    // position: absolute;
+                    // bottom: 0;
+                    // top: -6px;
+                    // left: 2.6rem;
+                    // display: inline-block !important;
+                    padding-left: 8px;
+                }
+                .form-control {
+                    background-color: #2a2e39;
+                    border: 1px solid #2a2e39;
+                    color: #fff;
+                    margin-bottom: 1rem;
+                }
+
+                .zoom {
+                    transform: scale(1.4);
+                    &:hover {
+                        // -ms-transform: scale(1.5);
+                        -webkit-transform: scale(1.7);
+                        transform: scale(1.7);
+                        fill: #2ab934;
+                    }
+                }
+                .select-userid {
+                    .dropdown-btn {
+                        position: relative;
+                        .fa-caret-down {
+                            position: absolute;
+                            right: 0;
+                            top: 5px;
+                            bottom: 0;
+                        }
+                    }
+                }
+                .checkboxes-group {
+                    display: grid;
+                    background: #2a2e39;
+                    margin-top: -0.6rem;
+                    border: 0.3px solid #807b7b;
+                    label {
+                        padding-left: 1rem;
+                    }
+                }
+            }
+        }
+        .modal-footer {
+            background: #1c2030;
+            border-top: unset;
+            justify-content: flex-start;
+            padding-top: 0;
+            padding-bottom: 0;
+
+            a {
+                color: #fff;
+                background-color: #0b5ed7;
+                border-color: #0a58ca;
+                padding: 7px;
+                border-radius: 4px;
+                text-decoration: none;
+            }
+        }
+    }
+}
+
+//report
+
+// .report-statement {
+//     .modal-content {
+//         position: absolute;
+//         left: auto;
+//         right: auto;
+//         top: 7rem;
+//     }
+//     .modal-body {
+//         .report-section {
+//             .form-control-label {
+//                 color: #fff;
+//                 line-height: 2.4;
+//             }
+//             .form-control {
+//                 background-color: #2a2e39;
+//                 border: 1px solid #2a2e39;
+//                 color: #fff;
+//             }
+//         }
+//         .react-datepicker__navigation-icon {
+//             top: 5px;
+//         }
+//     }
+//     .modal-footer {
+//         background: #1c2030;
+//         border-top: unset;
+//         justify-content: flex-start;
+//         padding-top: 0;
+//         padding-bottom: 1rem;
+//     }
+// }
+
+

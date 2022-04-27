@@ -1,0 +1,37 @@
+.footer {
+    max-width: 100%;
+    padding-top: 1rem;
+    // position: fixed;
+    // left: 0;
+    // bottom: 0;
+    width: 100%;
+    @media screen and (max-width: 768px) {
+        position: unset;
+    }
+    .footer-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 0 1rem;
+        .logo {
+            .cosmic-trade-icon {
+                max-width: 200px;
+                // padding-left: 1rem;
+            }
+        }
+        .tab {
+            display: flex;
+            justify-content: space-between;
+            width: 35%;
+            align-items: center;
+            .delete-duplication {
+                &:hover {
+                    color: #ff0000;
+                }
+            }
+            p{
+                margin-bottom: 0.5rem;
+            }
+        }
+    }
+}
