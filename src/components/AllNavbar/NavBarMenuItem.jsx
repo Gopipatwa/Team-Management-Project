@@ -26,24 +26,24 @@ const NavBarMenuItem = ({ items, depthLevel }) => {
     };
   }, [dropdown]);
 
-  const onMouseEnter = () => {
-    window.innerWidth > 960 && setDropdown(true);
-  };
+  // const onMouseEnter = () => {
+  //   window.innerWidth > 960 && setDropdown(true);
+  // };
 
-  const onMouseLeave = () => {
-    window.innerWidth > 960 && setDropdown(false);
-  };
+  // const onMouseLeave = () => {
+  //   window.innerWidth > 960 && setDropdown(false);
+  // };
 
   return (
     <li
       className="menu-items"
       ref={ref}
-      onMouseEnter={onMouseEnter}
-      onMouseLeave={onMouseLeave}
+      // onMouseEnter={onMouseEnter}
+      // onMouseLeave={onMouseLeave}
     >
       {items.submenu ? ( 
         <>
-          <button
+         <span 
             type="button"
             aria-haspopup="menu"
             aria-expanded={dropdown ? "true" : "false"}
@@ -55,7 +55,7 @@ const NavBarMenuItem = ({ items, depthLevel }) => {
           >
             {items.name}{" "}
             {depthLevel > 0 ? <span>&raquo;</span> : <span className="arrow" />}
-          </button>
+          </span>
           <Dropdown
             depthLevel={depthLevel}
             submenus={items.submenu}

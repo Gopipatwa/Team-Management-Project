@@ -1,17 +1,18 @@
 .tabsnab {
     .flex-wrap {
-        ul {
-            li {
-                @media screen and (max-width: 768px) {
-                    max-width: 11rem;
-                }
-                a {
-                    @media screen and (max-width: 768px) {
+        @media screen and (max-width: 768px) {
+            ul {
+                li {
+                    max-width: 49%;
+                    &:nth-child(even) {
+                        margin-right: 0;
+                    }
+                    a {
                         padding: 12px 10px !important;
                     }
-                }
-                &:last-child {
-                    margin: 0 auto;
+                    &:last-child {
+                        margin: 0 auto;
+                    }
                 }
             }
         }
@@ -19,6 +20,10 @@
 }
 .navbar-tab {
     @media screen and (max-width: 768px) {
+        .pd-navbar {
+            padding-right: 1rem !important;
+            padding-left: 1rem !important;
+        }
         .menu-icon {
             right: 0;
             left: auto;
@@ -28,13 +33,17 @@
             left: 0;
         }
         .user-right {
-            right: 5rem;
+            right: 3.3rem;
         }
     }
     .menus {
         display: flex;
         list-style: none;
         margin-bottom: 0;
+        @media screen and (max-width: 768px) {
+            display: block;
+            padding-left: 0;
+        }
         .menu-items {
             position: relative;
             font-size: 14px;
@@ -42,9 +51,8 @@
                 display: block;
                 text-align: left;
                 padding: 0.3rem 1rem;
-               
             }
-            button {
+            span {
                 color: inherit;
                 border: none;
                 cursor: pointer;
@@ -71,8 +79,22 @@
                 border-radius: 0.5rem;
                 display: none;
                 top: 3.3rem;
-                li:hover {
-                    background: #575a5f;
+                @media screen and (max-width: 768px) {
+                    position: unset;
+                    padding-left: 3rem;
+                    background: none;
+                }
+                li {
+                    @media screen and (max-width: 768px) {
+                        padding: 3px;
+                    }
+                    &:hover {
+                        background: #575a5f;
+                        @media screen and (max-width: 768px) {
+                            background-color: rgb(55 65 81 / var(--tw-bg-opacity));
+                            border-radius: 5px;
+                        }
+                    }
                 }
             }
             .dropdownmenu.show {

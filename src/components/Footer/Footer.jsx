@@ -31,8 +31,8 @@ const Footer = () => {
                     </div>
                 </div>
 
-                <div className="">
-                    <a className="mailto" href="mailto:Finrise@gmail.com" className="join-us-btn title"
+                <div className="gmail">
+                    <a className="mailto" href="mailto:Finrise@gmail.com" className=""
                     >Finrise@gmail.com</a>
                 </div>
             </div>

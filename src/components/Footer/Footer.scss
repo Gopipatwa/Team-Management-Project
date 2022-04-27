@@ -7,16 +7,23 @@
     width: 100%;
     @media screen and (max-width: 768px) {
         position: unset;
+        margin-left: 1rem;
     }
     .footer-content {
         display: flex;
         justify-content: space-between;
         align-items: center;
         margin: 0 1rem;
+        @media screen and (max-width: 768px) {
+            display: unset;
+        }
         .logo {
             .cosmic-trade-icon {
                 max-width: 200px;
                 // padding-left: 1rem;
+                @media screen and (max-width: 768px) {
+                    max-width: 150px;
+                }
             }
         }
         .tab {
@@ -24,6 +31,9 @@
             justify-content: space-between;
             width: 35%;
             align-items: center;
+            @media screen and (max-width: 768px) {
+                width: 90%;
+            }
             .delete-duplication {
                 &:hover {
                     color: #ff0000;
@@ -31,6 +41,12 @@
             }
             p{
                 margin-bottom: 0.5rem;
+            }
+        }
+        .gmail{
+            @media screen and (max-width: 768px) {
+                width: 50%;
+                margin: 0 auto;
             }
         }
     }

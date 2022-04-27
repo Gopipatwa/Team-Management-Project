@@ -69,7 +69,7 @@ export default function NavBar() {
         <Disclosure as="nav" className="bg-gray-800 shadow-md navbar-tab">
             {({ open }) => (
                 <>
-                    <div className="mx-auto px-4 sm:px-6 lg:px-8">
+                    <div className="mx-auto px-4 sm:px-6 lg:px-8 pd-navbar">
                         <div className="relative flex items-center justify-between h-16">
                             <div className="absolute inset-y-0 left-0 flex items-center sm:hidden menu-icon ">
                                 {/* Mobile menu button*/}
@@ -226,7 +226,7 @@ export default function NavBar() {
 
                     <Disclosure.Panel className="sm:hidden">
                         <div className="left-0 p-3 t-0 w-100 h-auto shadow-md bg-gray-800 text-white absolute h-full space-y-1 z-20">
-                            {navigation.map((item) => (
+                            {/* {navigation.map((item) => (
                                 <Disclosure.Button
                                     key={item.name}
                                     as="a"
@@ -240,7 +240,21 @@ export default function NavBar() {
                                     {item.name}
                                 </Disclosure.Button>
 
-                            ))}
+                            ))} */}
+
+                            <ul className="menus">
+                                {navigation.map((menu, index) => {
+
+                                    const depthLevel = 0;
+                                    return <NavBarMenuItem items={menu} key={index} depthLevel={depthLevel}
+                                        className={
+                                            classNames(
+                                                menu.current ? 'p-10 pr-20 text-white' : 'text-gray-500 hover:text-white',
+                                                'block px-3 py-2 rounded-md text-base font-medium')}
+                                    />;
+                                })}
+                            </ul>
+
 
                         </div>
 
