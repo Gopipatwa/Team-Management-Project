@@ -66,15 +66,16 @@ export default function NavBar() {
 
 
     return (
-        <Disclosure as="nav" className="bg-gray-800 shadow-md navbar-tab">
+        <Disclosure as="nav" className=" shadow-md navbar-tab">
             {({ open }) => (
                 <>
                     <div className="mx-auto px-4 sm:px-6 lg:px-8 pd-navbar">
                         <div className="relative flex items-center justify-between h-16">
                             <div className="absolute inset-y-0 left-0 flex items-center sm:hidden menu-icon ">
                                 {/* Mobile menu button*/}
-                                <Disclosure.Button className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none">
-                                    <span className="sr-only">Open main menu</span>
+                                {/* <Disclosure.Button className="inline-flex items-center justify-center  rounded-md text-gray-400 hover:text-white"> */}
+                                <Disclosure.Button className="text-gray-400">
+                                    {/* <span className="sr-only">Open main menu</span> */}
                                     {open ? (
                                         <XIcon className="block h-6 w-6 outline-none border-none" aria-hidden="true" />
                                     ) : (
@@ -124,15 +125,82 @@ export default function NavBar() {
                             <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0 user-right">
                                 <button
                                     type="button"
-                                    className="bg-gray-800 p-1 rounded-full text-gray-400 hover:text-white focus:outline-none"
+                                    className=" p-1 rounded-full text-gray-400 hover:text-white focus:outline-none"
                                 >
                                     <span className="sr-only">View notifications</span>
                                     <BellIcon className="h-6 w-6" aria-hidden="true" />
                                 </button>
 
                                 {/* Profile dropdown */}
-                                <span className='text-gray-400'>Admin</span>
-                                <Menu as="div" className="ml-3 relative z-20">
+                                <span className='text-400 user'>Admin</span>
+                                <div className="dashboard-tab ">
+                                    <NavDropdown title=
+                                        {
+                                            <span className="img-1">
+                                                <img className="avatar-img" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="" />
+                                            </span>
+                                        }
+                                        id="collasible-nav-dropdown" className="nav-item">
+                                        <div>
+                                            <div className="menu">
+                                                <div className="dropdown-body">
+                                                    <ul className="list-inline">
+
+                                                        <li className="inline-item">
+
+                                                            <NavDropdown.Item href='#' className="single-item" onClick={() => setProfileShow(true)}>
+
+
+                                                                <span className=''>
+                                                                    Profile
+                                                                </span>
+
+                                                            </NavDropdown.Item>
+                                                            <Profile
+                                                                show={profileShow}
+                                                                onHide={() => setProfileShow(false)}
+                                                            />
+
+                                                        </li>
+                                                        <li className="inline-item">
+                                                            <NavDropdown.Item href='#' className="single-item" onClick={() => setChangeShow(true)}>
+
+                                                                <span>Change Password</span>
+
+                                                            </NavDropdown.Item>
+
+                                                            <ChangePwd
+                                                                show={changeShow}
+                                                                onHide={() => setChangeShow(false)}
+                                                            />
+
+                                                        </li>
+                                                        <li className="inline-item">
+                                                            <NavDropdown.Item href='#' className="single-item" onClick={() => setSetting(true)}>
+                                                                <span >Settings</span>
+                                                            </NavDropdown.Item>
+
+                                                            <Setting
+                                                                show={setting}
+                                                                onHide={() => setSetting(false)}
+                                                            />
+                                                        </li>
+
+                                                        <li className="inline-item">
+                                                            <NavDropdown.Item href='#' className="single-item log-out">
+                                                                <span >Log Out</span>
+                                                            </NavDropdown.Item>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </NavDropdown>
+                                </div>
+
+
+
+                                {/* <Menu as="div" className="ml-3 relative z-20">
                                     <div>
                                         <Menu.Button className="bg-gray-800 flex text-sm rounded-full focus:outline-none">
                                             <span className="sr-only">Open user menu</span>
@@ -155,14 +223,14 @@ export default function NavBar() {
                                         <Menu.Items className="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-gray-800 ring-1 ring-black ring-opacity-5 focus:outline-none">
                                             <Menu.Item>
                                                 {({ active }) => (
-                                                    <div>
-                                                        <a
+                                                    <div onClick={() => setProfileShow(true)}>
+                                                        <div
                                                             // href="#"
                                                             className={classNames(active ? 'bg-gray-700' : '', 'block px-4 py-2 text-sm text-gray-300')}
-                                                            onClick={() => setProfileShow(true)}
+
                                                         >
                                                             Your Profile
-                                                        </a>
+                                                        </div>
                                                         <Profile
                                                             show={profileShow}
                                                             onHide={() => setProfileShow(false)}
@@ -172,10 +240,6 @@ export default function NavBar() {
 
 
                                                 )}
-                                                {/* <Profile
-                                                    show={profileShow}
-                                                    onHide={() => setProfileShow(false)}
-                                                /> */}
                                             </Menu.Item>
 
                                             <Menu.Item>
@@ -189,10 +253,6 @@ export default function NavBar() {
                                                     </a>
 
                                                 )}
-                                                {/* <ChangePwd
-                                                    show={profileShow}
-                                                    onHide={() => setProfileShow(false)}
-                                                /> */}
                                             </Menu.Item>
                                             <Menu.Item >
                                                 {({ active }) => (
@@ -219,7 +279,7 @@ export default function NavBar() {
                                             </Menu.Item>
                                         </Menu.Items>
                                     </Transition>
-                                </Menu>
+                                </Menu> */}
                             </div>
                         </div>
                     </div>
@@ -254,7 +314,6 @@ export default function NavBar() {
                                     />;
                                 })}
                             </ul>
-
 
                         </div>
 

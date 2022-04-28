@@ -26,36 +26,36 @@ const NavBarMenuItem = ({ items, depthLevel }) => {
     };
   }, [dropdown]);
 
-  // const onMouseEnter = () => {
-  //   window.innerWidth > 960 && setDropdown(true);
-  // };
+  const onMouseEnter = () => {
+    window.innerWidth > 960 && setDropdown(true);
+  };
 
-  // const onMouseLeave = () => {
-  //   window.innerWidth > 960 && setDropdown(false);
-  // };
+  const onMouseLeave = () => {
+    window.innerWidth > 960 && setDropdown(false);
+  };
 
   return (
     <li
       className="menu-items"
       ref={ref}
-      // onMouseEnter={onMouseEnter}
-      // onMouseLeave={onMouseLeave}
+      onMouseEnter={onMouseEnter}
+      onMouseLeave={onMouseLeave}
     >
       {items.submenu ? ( 
         <>
-         <span 
+          <button
             type="button"
             aria-haspopup="menu"
             aria-expanded={dropdown ? "true" : "false"}
             onClick={() => setDropdown((prev) => !prev)}
             className={classNames(
-                items.current ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white',
-                'px-3 py-2 rounded-md text-sm font-medium'
+                items.current ? 'bg-gray-900 text-white' : 'text-300 hover:bg-gray-700 hover:text-white',
+                'px-3 py-2 rounded-md text-sm '
             )}
           >
             {items.name}{" "}
             {depthLevel > 0 ? <span>&raquo;</span> : <span className="arrow" />}
-          </span>
+          </button>
           <Dropdown
             depthLevel={depthLevel}
             submenus={items.submenu}

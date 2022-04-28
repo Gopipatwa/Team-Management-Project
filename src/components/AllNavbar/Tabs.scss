@@ -1,18 +1,20 @@
 .tabsnab {
     .flex-wrap {
-        @media screen and (max-width: 768px) {
-            ul {
-                li {
+        ul {
+            li {
+                @media screen and (max-width: 768px) {
                     max-width: 49%;
                     &:nth-child(even) {
                         margin-right: 0;
                     }
-                    a {
+                }
+                a {
+                    @media screen and (max-width: 768px) {
                         padding: 12px 10px !important;
                     }
-                    &:last-child {
-                        margin: 0 auto;
-                    }
+                }
+                &:last-child {
+                    margin: 0 auto;
                 }
             }
         }
@@ -33,7 +35,8 @@
             left: 0;
         }
         .user-right {
-            right: 3.3rem;
+            right: 3.5rem;
+            left: auto;
         }
     }
     .menus {
@@ -52,11 +55,12 @@
                 text-align: left;
                 padding: 0.3rem 1rem;
             }
-            span {
+            button {
                 color: inherit;
                 border: none;
                 cursor: pointer;
                 width: 100%;
+                text-align: left;
             }
             .arrow::after {
                 content: "";
@@ -78,17 +82,20 @@
                 background-color: #374151;
                 border-radius: 0.5rem;
                 display: none;
-                top: 3.3rem;
+                top: 2.5rem;
+                z-index: 1;
                 @media screen and (max-width: 768px) {
                     position: unset;
-                    padding-left: 3rem;
+                    padding-left: 2rem;
                     background: none;
+                    // margin-left: 2rem;
                 }
                 li {
                     @media screen and (max-width: 768px) {
                         padding: 3px;
                     }
-                    &:hover {
+                    &:hover,
+                    :active {
                         background: #575a5f;
                         @media screen and (max-width: 768px) {
                             background-color: rgb(55 65 81 / var(--tw-bg-opacity));
@@ -104,6 +111,101 @@
                 position: absolute;
                 left: 100%;
                 /* top: -7px; */
+            }
+        }
+    }
+    .user {
+        padding-left: 1rem;
+        @media screen and (max-width: 768px) {
+            padding-left: 0rem;
+        }
+    }
+    .dashboard-tab {
+        // padding-left: 1rem;
+        .dropdown-toggle {
+            padding: 0;
+        }
+        .dropdown-toggle::after {
+            display: block;
+            border: none;
+        }
+        .img-1 {
+            // padding-left: 1rem;
+            text-align: center;
+        }
+        .avatar-img {
+            border-radius: 60%;
+            height: 36px;
+            width: 36px;
+            object-fit: cover;
+            padding: 3px;
+            background-color: #2a2e39;
+        }
+        .dropdown-menu {
+            padding: 0;
+            background: unset;
+            margin-top: 0;
+            border: none;
+            @media screen and (max-width: 768px) {
+                position: absolute;
+            }
+            .dropdown-item {
+                padding: 0;
+                &:focus,
+                &:hover {
+                    background-color: unset;
+                }
+            }
+        }
+        .menu {
+            background: #1c232d;
+            border: 1px solid #2a2e39;
+            width: 180px;
+            position: absolute;
+            right: -0.2rem;
+            left: auto;
+            text-align: center;
+            z-index: 999;
+            top: 11px;
+
+            @media screen and (max-width: 768px) {
+                right: auto;
+                left: 2rem;
+            }
+
+            .dropdown-body {
+                max-height: 290px;
+                // padding: 10px 0 0;
+                overflow-y: auto;
+                text-align: left;
+                font-size: 14px;
+                .list-inline {
+                    padding-bottom: 6px;
+                    margin-bottom: 0;
+                    .inline-item {
+                        padding: 0.5rem 1rem;
+                        &:hover {
+                            background-color: #2a2e3987;
+                        }
+                        .single-item {
+                            font-size: 14px !important;
+                            //padding: 5px 20px;
+                            font-weight: 500;
+                            color: #ffffff;
+                            text-decoration: none;
+                            span {
+                                font-size: 0.9375rem;
+                                font-weight: 300;
+                                color: #dedede !important;
+                                padding-left: 4px;
+                            }
+                        }
+                        .log-out {
+                            // color: #f10808;
+                            font-weight: 400;
+                        }
+                    }
+                }
             }
         }
     }

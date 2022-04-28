@@ -28,7 +28,7 @@ function Profile(props) {
 
 
     return (
-        <div className='user-section'>
+        <div >
             <Modal
                 {...props}
                 size="xl"
@@ -36,6 +36,7 @@ function Profile(props) {
                 centered
                 onSubmit={handleOnUpdate}
                 noValidate
+                className='user-section'
             // validate={validate}
             >
                 {/* <Modal.Header closeButton> */}
@@ -56,7 +57,7 @@ function Profile(props) {
                     {/* <Form className='profile-form' noValidate validated={validated} onSubmit={handleSubmit}> */}
                     <Form className='profile-form'>
                        
-                        <Row className="mb-12">
+                        <Row className="">
                             <Form.Group as={Col} md="6" className='form-group'>
                                 <Form.Label>Client id</Form.Label>
                                 <Form.Control

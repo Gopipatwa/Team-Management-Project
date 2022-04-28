@@ -32,7 +32,7 @@ const Footer = () => {
                 </div>
 
                 <div className="gmail">
-                    <a className="mailto" href="mailto:Finrise@gmail.com" className=""
+                    <a className="mailto" href="mailto:Finrise@gmail.com" className="join-us-btn title"
                     >Finrise@gmail.com</a>
                 </div>
             </div>

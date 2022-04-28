@@ -5,33 +5,43 @@
 .modal-footer {
     border-top: unset;
 }
-.main-profile-header {
-    background: #2a2e39;
-    border-bottom: unset;
-    padding: 12px 20px;
-    display: block !important;
-    .profile-header {
-        display: flex;
-        justify-content: space-between;
-        .header {
-            h1 {
-                font-size: 28px;
-                font-weight: 500;
-                color: #fff;
-                .active {
-                    font-size: 22px;
-                    padding: 5px 5px;
-                    color: rgb(1, 170, 120);
-                    font-weight: bold;
-                    margin: 2px;
-                    border-radius: 2px;
-                    background: #ffffff21 !important;
+.user-section {
+    .modal-content {
+        // @media screen and (max-width: 768px) {
+        //     width: 80%;
+        // }
+        .main-profile-header {
+            background: #2a2e39;
+            border-bottom: unset !important;
+            padding: 12px 20px !important;
+            display: block !important;
+            .profile-header {
+                display: flex;
+                justify-content: space-between;
+                .header {
+                    h1 {
+                        font-size: 28px;
+                        font-weight: 500;
+                        color: #fff;
+                        @media screen and (max-width: 768px) {
+                            font-size: 21px;
+                        }
+                        .active {
+                            font-size: 22px;
+                            padding: 5px 5px;
+                            color: rgb(1, 170, 120);
+                            font-weight: bold;
+                            margin: 2px;
+                            border-radius: 2px;
+                            background: #ffffff21 !important;
+                        }
+                    }
                 }
-            }
-        }
-        .profile-btn {
-            .btn-sm:first-child {
-                margin-right: 4px;
+                .profile-btn {
+                    .btn-sm:first-child {
+                        margin-right: 4px;
+                    }
+                }
             }
         }
     }
@@ -39,35 +49,35 @@
 .modal-body {
     background: #1c2030;
     .profile-form {
-        .focused {
-            .form-label {
-                .img-1 {
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    .profile-img {
-                        border-radius: 60%;
-                        height: 80px;
-                        width: 80px;
-                        object-fit: cover;
-                        padding: 3px;
-                        background-color: #2a2e39;
-                    }
-                    .notification {
-                        color: rgba(255, 255, 255);
-                        padding-left: 3px;
-                        // padding-right: 3px;
-                        &:hover {
-                            color: rgba(255, 255, 255, 0.75);
-                        }
-                    }
-                    .change-profile {
-                        margin-right: 7px;
-                        color: rgba(255, 255, 255);
-                    }
-                }
-            }
-        }
+        // .focused {
+        //     .form-label {
+        //         .img-1 {
+        //             display: flex;
+        //             justify-content: center;
+        //             align-items: center;
+        //             .profile-img {
+        //                 border-radius: 60%;
+        //                 height: 80px;
+        //                 width: 80px;
+        //                 object-fit: cover;
+        //                 padding: 3px;
+        //                 background-color: #2a2e39;
+        //             }
+        //             .notification {
+        //                 color: rgba(255, 255, 255);
+        //                 padding-left: 3px;
+        //                 // padding-right: 3px;
+        //                 &:hover {
+        //                     color: rgba(255, 255, 255, 0.75);
+        //                 }
+        //             }
+        //             .change-profile {
+        //                 margin-right: 7px;
+        //                 color: rgba(255, 255, 255);
+        //             }
+        //         }
+        //     }
+        // }
         .form-group {
             margin-bottom: 1rem;
             .form-control {
@@ -77,6 +87,7 @@
             }
         }
         .row {
+            margin-bottom: 0.7rem;
             .form-label {
                 color: #fff;
             }
@@ -88,7 +99,8 @@
 
 .user {
     .modal-content {
-        width: 82%;
+        // width: 82%;
+        width: 100%;
         margin: 0 auto;
         background: #1c2030;
         padding: 1.25rem;
@@ -190,8 +202,7 @@
             padding: 2px 1rem;
             .form-change-password {
                 .form-select {
-                   
-                    background-image: url('../../..//public/icon/icons8-sort-down-50.png') ;
+                    background-image: url("../../..//public/icon/icons8-sort-down-50.png");
                 }
                 .telegram {
                     display: flex;
@@ -301,5 +312,3 @@
 //         padding-bottom: 1rem;
 //     }
 // }
-
-
