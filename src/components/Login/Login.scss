@@ -1,9 +1,5 @@
-
-.form-signup{
-    height: 90vh !important;
-}
 .form {
-    font-family: sans-serif;
+    // font-family: sans-serif;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -11,44 +7,64 @@
     height: 82vh;
     color: #fff;
     font-size: 14px;
-
+    height: 100vh;
     @media screen and (max-width: 768px) {
         height: 76vh;
     }
-    
+
     .form-group {
         padding: 30px;
         border-radius: 5px;
-        min-width: 350px;
-        box-shadow: 0 0 10px 0 #131722;
-        border: 1px solid #2a2e39;
+        // min-width: 350px;
+        width: 30%;
+        // box-shadow: 0 0 10px 0 #131722;
+        // border: 1px solid #2a2e39;
+        // background-image: linear-gradient(to right, #1a2570, #181446, #18144a, #1a2570);
 
+        // background-image: linear-gradient(to right, #181226, #180f80, #180f80, #181226);
+        background-image: linear-gradient(to right, #181226, #201e34, #201e34, #181226);
+        @media screen and (max-width: 768px) {
+            width: 100%;
+            box-shadow: none;
+            border: none;
+            background-image: none;
+        }
         .form-heading {
             text-align: center;
-            font-size: 22px;
-            margin-bottom: 15px;
+            font-size: 2rem;
+            margin-bottom: 3rem;
             font-weight: 600;
+            color: #00c4dd;
         }
-        .forgot-password {
-            display: flex;
-            justify-content: end;
-            padding: 0;
-            text-decoration: none;
+        .forgot {
+            width: 73%;
+            margin: 0.7rem auto;
+            .forgot-password {
+                display: flex;
+                justify-content: end;
+                text-decoration: none;
+            }
         }
         .input-group-content {
             position: relative;
             margin-bottom: 1rem;
+            width: 73%;
+            margin: 0 auto 1rem auto;
             .form-control {
                 // height: 25px;
                 height: 45px;
-                font-size: 14px;
                 background-color: #3e434f;
-                border: 1px solid #2a2e39;
+                // border: 1px solid #2a2e39;
                 color: #fff;
+                border-radius: 1.3rem;
+
+                &:focus {
+                    box-shadow: 0 0 4px 0 #12f8f8;
+                }
             }
             .admin-pass-hide-show {
                 position: absolute;
-                right: 8px;
+                right: 13px;
                 top: 15px;
                 .eye-icon {
                     transform: scale(1.5);
@@ -60,36 +76,36 @@
 
         .button-container {
             margin-top: 1rem;
+            width: 73%;
+            margin: 0 auto 1rem auto;
             .btn {
-                font-size: 1rem;
+                font-size: 1.26rem;
                 font-weight: 600;
                 color: #fff;
-            }
-        }
-        .form-check {
-            padding-left: 3rem;
-            .form-check-input:focus {
-                box-shadow: none;
-            }
-            .form-check-label {
-                display: flex;
-                .term-conditions {
-                    padding-left: 4px;
-                    padding-top: 0 !important;
-                    text-decoration: none;
+                // background-image: linear-gradient(to right, #182ece,#181446, #181446, #1f309d);
+                // background-image: linear-gradient(to right, #613b5f, #392945);
+                // background-image: linear-gradient(
+                //     to right,
+                //     rgb(192, 72, 72) 0%,
+                //     rgb(72, 0, 72) 51%,
+                //     rgb(192, 72, 72) 100%
+                // );
+                background-image: linear-gradient(to right, #198754 0%, #084298 51%, #ab70cb 100%);
+                border-radius: 30px;
+                // transition: transform 0.25s ease;
+                transition: 0.5s;
+                cursor: zoom-in;
+                background-size: 200% auto;
+                &:focus {
+                    box-shadow: 0 0 4px 0 #0cffa8;
+                }
+                &:hover {
+                    -webkit-transform: scale(2);
+                    transform: scale(1.06);
+                    cursor: zoom-out;
+                    background-position: 100%;
                 }
             }
-        }
-    }
-    .sign-up {
-        display: flex;
-        margin-top: 1.4rem;
-        font-size: 14px;
-        .sign-up-here {
-            padding: 0;
-            padding-left: 4px;
-            font-weight: 600;
-            text-decoration: none;
         }
     }
 }

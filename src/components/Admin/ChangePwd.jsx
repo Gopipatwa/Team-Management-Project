@@ -68,7 +68,7 @@ function ChangePwd(props) {
                             name="NewPassword"
                             type={newpasswordShown ? "text" : "password"}
                             className="form-control"
-                            autocomplete="on"
+                            autoComplete="on"
                         />
                         <label className='input-group-addon'>
                             <input type="checkbox" style={{ display: 'none' }} />
@@ -83,7 +83,7 @@ function ChangePwd(props) {
                             type={newreppasswordShown ? "text" : "password"}
                             // pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
                             className="form-control"
-                            autocomplete="on"
+                            autoComplete="on"
                         />
                         <label className='input-group-addon'>
                             <input type="checkbox" style={{ display: 'none' }} />

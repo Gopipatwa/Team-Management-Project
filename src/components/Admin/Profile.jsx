@@ -7,8 +7,7 @@ function Profile(props) {
     const [accessUser, setAccessUser] = useState()
     const [username, setUsername] = useState()
     const [emailAddress, setEmailAddress] = useState()
-    const [firstName, setFirstName] = useState()
-    const [lastName, setLastName] = useState()
+    const [name, setName] = useState()
     const [telegramUsername, setTelegramUsername] = useState()
     const [contactNumber, setContactNumber] = useState()
 
@@ -21,14 +20,17 @@ function Profile(props) {
             event.preventDefault();
             event.stopPropagation();
         }
-
         setValidate(true);
     };
 
 
+    const handleSubmit = event => {
+        event.preventDefault();
+        alert('You have submitted the form.')
+    }
 
     return (
-        <div className='user-section'>
+        <div >
             <Modal
                 {...props}
                 size="xl"
@@ -36,18 +38,21 @@ function Profile(props) {
                 centered
                 onSubmit={handleOnUpdate}
                 noValidate
+                className='user-section'
             // validate={validate}
             >
                 {/* <Modal.Header closeButton> */}
                 <Modal.Header className='main-profile-header'>
                     <Modal.Title id="contained-modal-title-vcenter" className='profile-header'>
                         <div className="header">
-                            <h1>Profile - <span className='active'>Active</span></h1>
+                            <h1>Profile
+                                {/* - <span className='active'>Active</span> */}
+                            </h1>
                         </div>
                         <div className="profile-btn">
                             <Button variant="danger" className='btn-sm' onClick={props.onHide}>Close</Button>
                             {/* <button onClick={props.onHide}>Close</button> */}
-                            <Button variant="primary" className='btn-sm' type="submit">Update</Button>
+                            <Button variant="primary" className='btn-sm' type="submit" onChange={handleSubmit}>Update</Button>
                             {/* <button type="submit" >Update</button> */}
                         </div>
                     </Modal.Title>
@@ -55,8 +60,8 @@ function Profile(props) {
                 <Modal.Body >
                     {/* <Form className='profile-form' noValidate validated={validated} onSubmit={handleSubmit}> */}
                     <Form className='profile-form'>
-                       
-                        <Row className="mb-12">
+
+                        <Row className="">
                             <Form.Group as={Col} md="6" className='form-group'>
                                 <Form.Label>Client id</Form.Label>
                                 <Form.Control
@@ -103,21 +108,11 @@ function Profile(props) {
                                 {/* <Form.Control.Feedback>Looks good!</Form.Control.Feedback> */}
                             </Form.Group>
                             <Form.Group as={Col} md="6" className='form-group'>
-                                <Form.Label>First name</Form.Label>
+                                <Form.Label>Name</Form.Label>
                                 <Form.Control
                                     required
                                     type="text"
-                                    placeholder="First name"
-                                    defaultValue=""
-                                />
-                                {/* <Form.Control.Feedback>Looks good!</Form.Control.Feedback> */}
-                            </Form.Group>
-                            <Form.Group as={Col} md="6" className='form-group'>
-                                <Form.Label>Last name</Form.Label>
-                                <Form.Control
-                                    required
-                                    type="text"
-                                    placeholder="Last name"
+                                    placeholder="Name"
                                     defaultValue=""
                                 />
                                 {/* <Form.Control.Feedback>Looks good!</Form.Control.Feedback> */}
@@ -140,14 +135,14 @@ function Profile(props) {
                                     placeholder="Contact Number"
                                     defaultValue=""
                                     required />
-                                
+
                             </Form.Group>
-                           
+
                         </Row>
 
                     </Form>
                 </Modal.Body>
-               
+
             </Modal>
 
         </div>

@@ -1,53 +1,141 @@
 .footer {
-    max-width: 100%;
-    padding-top: 1rem;
+    // max-width: 100%;
+    position: fixed;
+    left: 0;
+    width: 100%;
+    height: auto;
+    bottom: 0;
+
     // position: fixed;
     // left: 0;
+    // width: 100%;
+    // height: auto;
     // bottom: 0;
-    width: 100%;
     @media screen and (max-width: 768px) {
-        position: unset;
-        margin-left: 1rem;
+        // position: unset;
+        // margin-left: 1rem;
+        // width: auto;
+        // bottom: -5rem
+        position: absolute;
+        bottom: auto;
     }
     .footer-content {
+        margin: 0 1rem;
         display: flex;
         justify-content: space-between;
         align-items: center;
-        margin: 0 1rem;
+        max-width: 100%;
+        padding-top: 0.5rem;
+        font-size: 0.9rem;
         @media screen and (max-width: 768px) {
-            display: unset;
+            // width: 90%;
+            font-size: 0.7rem;
         }
-        .logo {
-            .cosmic-trade-icon {
-                max-width: 200px;
-                // padding-left: 1rem;
-                @media screen and (max-width: 768px) {
-                    max-width: 150px;
-                }
-            }
+        .delete-duplication:hover {
+            color: #ff0000;
         }
-        .tab {
-            display: flex;
-            justify-content: space-between;
-            width: 35%;
-            align-items: center;
+
+        p {
+            margin-bottom: 0.5rem;
+            padding-right: 2rem;
+            color: #ff0000;
+            font-weight: 700;
             @media screen and (max-width: 768px) {
-                width: 90%;
-            }
-            .delete-duplication {
-                &:hover {
-                    color: #ff0000;
-                }
-            }
-            p{
-                margin-bottom: 0.5rem;
+                padding-right: 0;
+                margin-bottom: 0.2rem;
             }
         }
-        .gmail{
-            @media screen and (max-width: 768px) {
+    }
+    // .gmail {
+    //     @media screen and (max-width: 768px) {
+    //         width: 50%;
+    //         margin: 0 auto;
+
+    //     }
+    // }
+}
+
+.toggle {
+    margin-bottom: 0.5rem;
+
+    .toggle-switch {
+        position: relative;
+        width: 42px;
+        display: inline-block;
+        text-align: left;
+        top: 5px;
+        @media screen and (max-width: 768px) {
+            width: 36px;
+        }
+        .checkbox {
+            display: none;
+        }
+    }
+    .label {
+        display: block;
+        overflow: hidden;
+        cursor: pointer;
+        border: 0 solid #bbb;
+        border-radius: 20px;
+        .inner {
+            display: block;
+            width: 200%;
+            margin-left: -100%;
+            // transition: margin 0.3s ease-in 0s;
+            transition: margin 0.2s ease-in 0s;
+            &:before,
+            &:after {
+                float: left;
                 width: 50%;
-                margin: 0 auto;
+                height: 19px;
+                padding: 0;
+                line-height: 20.4px;
+                color: #fff;
+                box-sizing: border-box;
+                font-size: 0.7rem;
+                @media screen and (max-width: 768px) {
+                    height: 17px;
+                    line-height: 18px;
+                    font-size: 0.6rem;
+                }
+            }
+            &:before {
+                content: "ON";
+                padding-left: 6px;
+                background-color: #060;
+                color: #fff;
+            }
+            &:after {
+                content: "OFF";
+                padding-right: 6px;
+                background-color: rgb(250, 3, 3);
+                color: #fff;
+                text-align: right;
             }
         }
+        .switch {
+            display: block;
+            width: 10px;
+            margin: 5px;
+            background: #fff;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            right: 24px;
+            border: 0 solid #bbb;
+            border-radius: 20px;
+            transition: all 0.1s ease-in 0.1s;
+            @media screen and (max-width: 768px) {
+                width: 8px;
+                right: 21px;
+            }
+        }
+    }
+
+    .checkbox:checked + .label .inner {
+        margin-left: 0;
+    }
+    .checkbox:checked + .label .switch {
+        right: 0px;
     }
 }

@@ -7,7 +7,6 @@ const SpreadBook = (props) => {
     // console.log(props.data);
 
     const columns = [
-
         { Header: "srno", accessor: "srno", Footer: "srno" },
         { Header: "userid", accessor: "userid", Footer: "userid" },
         { Header: "symbol1", accessor: "symbol1", Footer: "symbol1" },
@@ -54,11 +53,17 @@ const SpreadBook = (props) => {
             <div>SpreadBook</div>
             <ReactTable
                 data={data}
-                className="-striped -highlight"
+                // className="-striped -highlight"
                 // resolveData={data => data.map(row => row)} 
                 columns={columns}
+                style={{
+                    // height: "600px",
+                    marign: 0
+                     // This will force the table body to overflow and scroll, since there is not enough room
+                }}
                 filterable
                 minRows={0}
+                showPagination={false}
                 // pivotBy={this.state.grpName}
                 // pivotBy={['groupname']}
                 // freezeWhenExpanded="true"

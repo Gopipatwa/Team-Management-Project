@@ -2,6 +2,7 @@
   text-align: center;
 }
 
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -14,7 +15,7 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  /* background-color: #282c34; */
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -35,4 +36,8 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.rthfc .rt-th{
+  background-color: inherit;
 }
