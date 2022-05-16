@@ -6,3 +6,43 @@
 body{
     background: #161b22;
 }
+.container{
+    display: flex;
+    width: 100%;
+    height: 90vh;
+    justify-content: center;
+    align-items: center;
+}
+.container form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #26292c;
+    width: 400px;
+    border-radius: 5px;
+    height: 300px;
+    box-shadow: 0 0 3px rgba(255, 255, 255, 0.15);
+}
+
+.container form div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin: 2px;
+}
+.container form div label{
+    color: gray;
+    float: left;
+}
+.container form div input{
+    color: gray;
+    background: #161b22;
+    border: none;
+    width: 200px;
+    border-radius: 4px;
+    padding-left: 10px;
+    outline: none;
+    height: 30px;
+}
