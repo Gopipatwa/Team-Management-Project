@@ -9,11 +9,11 @@ import Popup from './Popup';
 
 import withFixedColumns from "react-table-hoc-fixed-columns";
 // import "react-table-hoc-fixed-columns/lib/styles.css";
-import './Fixedcolumn.scss';
+// import './Fixedcolumn.scss';
 
 
 
-const ReactTableFixedColumns = withFixedColumns(ReactTable);
+// const ReactTableFixedColumns = withFixedColumns(ReactTable);
 
 export default class NetPosition extends React.Component {
     constructor(props) {
@@ -31,9 +31,16 @@ export default class NetPosition extends React.Component {
             },
             filter: false,
             pagination: false,
-            columns : [
+            columns: [
+                // {
+                //     id: 'checkbox-table-column',
+                //     width: 25,
+                //     Cell: ({ row }: any) => {
+                //         return <input type='checkbox' />
+                //     },
+                // },
                 {
-                    Header: 'srno', fixed: "left", show:true, accessor: 'srno', Footer: (row) => {
+                    Header: 'srno', show: true, accessor: 'srno', Footer: (row) => {
                         const length = row.data.length;
                         // const ageSum = row.data
                         //   .map(({ age }) => age)
@@ -42,23 +49,23 @@ export default class NetPosition extends React.Component {
                         return <div>Total: {row.data.length}</div>;
                     }
                 },
-                { Header: 'userid', fixed: "left", show:true, accessor: 'userid', Footer: '' },
-                { Header: 'accountcode', fixed: "left", show:true, accessor: 'accountcode', Footer: "" },
-                { Header: 'symbol', fixed: "left", show:true, accessor: 'symbol', Footer: "" },
-                { Header: 'expirydate', fixed: "left", show:true, accessor: 'expirydate', Footer: "", },
-                { Header: 'excode', fixed: "left", show:true, accessor: 'excode', Footer: "" },
-                { Header: 'scripcode', fixed: "left", show:true, accessor: 'scripcode', Footer: "" },
-                { Header: 'securitytype', fixed: "left", show:true, accessor: 'securitytype', Footer: "" },
+                { Header: 'userid', show: true, accessor: 'userid', Footer: 'test' },
+                { Header: 'accountcode', show: true, accessor: 'accountcode', Footer: "" },
+                { Header: 'symbol', show: true, accessor: 'symbol', Footer: "" },
+                { Header: 'expirydate', show: true, accessor: 'expirydate', Footer: "", },
+                { Header: 'excode', show: true, accessor: 'excode', Footer: "" },
+                { Header: 'scripcode', show: true, accessor: 'scripcode', Footer: "" },
+                { Header: 'securitytype', show: true, accessor: 'securitytype', Footer: "" },
                 {
-                    Header: 'strikeprice', fixed: "left", show:true, accessor: 'strikeprice', Footer: (row) => {
-    
+                    Header: 'strikeprice', show: true, accessor: 'strikeprice', Footer: (row) => {
+
                         const name = row.column.Header
                         const ltpsum = _.round(_.sum((row.data).map((dt) => { return dt[name] })), 2)
                         return <div>{ltpsum}</div>;
                     }, aggregate: (values, rows) => _.round(_.sum(values))
                 },
                 {
-                    Header: 'opttype', fixed: "left", show:true, accessor: 'opttype',
+                    Header: 'opttype', show: true, accessor: 'opttype',
                     //  Footer: (row) => {
                     //     const name = row.column.Header
                     //     const ltpsum = _.round(_.sum((row.data).map((dt) => { return dt[name] })), 2)
@@ -67,14 +74,14 @@ export default class NetPosition extends React.Component {
                     aggregate: (values, rows) => _.round(_.sum(values))
                 },
                 {
-                    Header: 'openqty', show:true, accessor: 'openqty', Footer: (row) => {
+                    Header: 'openqty', show: true, accessor: 'openqty', Footer: (row) => {
                         const name = row.column.Header
                         const ltpsum = _.round(_.sum((row.data).map((dt) => { return dt[name] })), 2)
                         return <div>{ltpsum}</div>;
                     }, aggregate: (values, rows) => _.round(_.sum(values)), Cell: row => (
                         <div
                             style={{
-                                color: (row.value > 0) ? "green" : "red",
+                                color: (row.value > 0) ? "#00dc9c" : "red",
                             }}
                         >
                             {row.value}
@@ -82,21 +89,21 @@ export default class NetPosition extends React.Component {
                     )
                 },
                 {
-                    Header: 'openrate', show:true, accessor: 'openrate', Footer: (row) => {
+                    Header: 'openrate', show: true, accessor: 'openrate', Footer: (row) => {
                         const name = row.column.Header
                         const ltpsum = _.round(_.sum((row.data).map((dt) => { return dt[name] })), 2)
                         return <div>{ltpsum}</div>;
                     }, aggregate: (values, rows) => _.round(_.sum(values))
                 },
                 {
-                    Header: 'openamt', show:true, accessor: 'openamt', Footer: (row) => {
+                    Header: 'openamt', show: true, accessor: 'openamt', Footer: (row) => {
                         const name = row.column.Header
                         const ltpsum = _.round(_.sum((row.data).map((dt) => { return dt[name] })), 2)
                         return <div>{ltpsum}</div>;
                     }, aggregate: (values, rows) => _.round(_.sum(values)), Cell: row => (
                         <div
                             style={{
-                                color: (row.value > 0) ? "green" : "red",
+                                color: (row.value > 0) ? "#00dc9c" : "red",
                             }}
                         >
                             {row.value}
@@ -104,49 +111,49 @@ export default class NetPosition extends React.Component {
                     )
                 },
                 {
-                    Header: 'buyqty', show:true, accessor: 'buyqty', Footer: (row) => {
+                    Header: 'buyqty', show: true, accessor: 'buyqty', Footer: (row) => {
                         const name = row.column.Header
                         const ltpsum = _.round(_.sum((row.data).map((dt) => { return dt[name] })), 2)
                         return <div>{ltpsum}</div>;
                     }, aggregate: (values, rows) => _.round(_.sum(values))
                 },
                 {
-                    Header: 'buyrate', show:true, accessor: 'buyrate', Footer: (row) => {
+                    Header: 'buyrate', show: true, accessor: 'buyrate', Footer: (row) => {
                         const name = row.column.Header
                         const ltpsum = _.round(_.sum((row.data).map((dt) => { return dt[name] })), 2)
                         return <div>{ltpsum}</div>;
                     }, aggregate: (values, rows) => _.round(_.sum(values))
                 },
                 {
-                    Header: 'buyamt', show:true, accessor: 'buyamt', Footer: (row) => {
+                    Header: 'buyamt', show: true, accessor: 'buyamt', Footer: (row) => {
                         const name = row.column.Header
                         const ltpsum = _.round(_.sum((row.data).map((dt) => { return dt[name] })), 2)
                         return <div>{ltpsum}</div>;
                     }, aggregate: (values, rows) => _.round(_.sum(values))
                 },
                 {
-                    Header: 'sellqty', show:true, accessor: 'sellqty', Footer: (row) => {
+                    Header: 'sellqty', show: true, accessor: 'sellqty', Footer: (row) => {
                         const name = row.column.Header
                         const ltpsum = _.round(_.sum((row.data).map((dt) => { return dt[name] })), 2)
                         return <div>{ltpsum}</div>;
                     }, aggregate: (values, rows) => _.round(_.sum(values))
                 },
                 {
-                    Header: 'sellrate', show:true, accessor: 'sellrate', Footer: (row) => {
+                    Header: 'sellrate', show: true, accessor: 'sellrate', Footer: (row) => {
                         const name = row.column.Header
                         const ltpsum = _.round(_.sum((row.data).map((dt) => { return dt[name] })), 2)
                         return <div>{ltpsum}</div>;
                     }, aggregate: (values, rows) => _.round(_.sum(values))
                 },
                 {
-                    Header: 'sellamt', show:true, accessor: 'sellamt', Footer: (row) => {
+                    Header: 'sellamt', show: true, accessor: 'sellamt', Footer: (row) => {
                         const name = row.column.Header
                         const ltpsum = _.round(_.sum((row.data).map((dt) => { return dt[name] })), 2)
                         return <div>{ltpsum}</div>;
                     }, aggregate: (values, rows) => _.round(_.sum(values))
                 },
                 {
-                    Header: 'netqty', show:true, accessor: 'netqty', Footer: (row) => {
+                    Header: 'netqty', show: true, accessor: 'netqty', Footer: (row) => {
                         const name = row.column.Header
                         const ltpsum = _.round(_.sum((row.data).map((dt) => { return dt[name] })), 2)
                         return <div>{ltpsum}</div>;
@@ -161,21 +168,21 @@ export default class NetPosition extends React.Component {
                     ), aggregate: (values, rows) => _.round(_.sum(values))
                 },
                 {
-                    Header: 'netrate', show:true, accessor: 'netrate', Footer: (row) => {
+                    Header: 'netrate', show: true, accessor: 'netrate', Footer: (row) => {
                         const name = row.column.Header
                         const ltpsum = _.round(_.sum((row.data).map((dt) => { return dt[name] })), 2)
                         return <div>{ltpsum}</div>;
                     }, aggregate: (values, rows) => _.round(_.sum(values))
                 },
                 {
-                    Header: 'netamt', show:true, accessor: 'netamt', Footer: (row) => {
+                    Header: 'netamt', show: true, accessor: 'netamt', Footer: (row) => {
                         const name = row.column.Header
                         const ltpsum = _.round(_.sum((row.data).map((dt) => { return dt[name] })), 2)
                         return <div>{ltpsum}</div>;
                     }, aggregate: (values, rows) => _.round(_.sum(values))
                 },
                 {
-                    Header: 'closeqty', show:true, accessor: 'closeqty', Footer: (row) => {
+                    Header: 'closeqty', show: true, accessor: 'closeqty', Footer: (row) => {
                         const name = row.column.Header
                         const ltpsum = _.round(_.sum((row.data).map((dt) => { return dt[name] })), 2)
                         return <div>{ltpsum}</div>;
@@ -190,127 +197,127 @@ export default class NetPosition extends React.Component {
                     )
                 },
                 {
-                    Header: 'closerate', show:true, accessor: 'closerate', Footer: (row) => {
+                    Header: 'closerate', show: true, accessor: 'closerate', Footer: (row) => {
                         const name = row.column.Header
                         const ltpsum = _.round(_.sum((row.data).map((dt) => { return dt[name] })), 2)
                         return <div>{ltpsum}</div>;
                     }, aggregate: (values, rows) => _.round(_.sum(values))
                 },
                 {
-                    Header: 'closeamt', show:true, accessor: 'closeamt', Footer: (row) => {
+                    Header: 'closeamt', show: true, accessor: 'closeamt', Footer: (row) => {
                         const name = row.column.Header
                         const ltpsum = _.round(_.sum((row.data).map((dt) => { return dt[name] })), 2)
                         return <div>{ltpsum}</div>;
                     }, aggregate: (values, rows) => _.round(_.sum(values))
                 },
                 {
-                    Header: 'prebrk', show:true, accessor: 'prebrk', Footer: (row) => {
+                    Header: 'prebrk', show: true, accessor: 'prebrk', Footer: (row) => {
                         const name = row.column.Header
                         const ltpsum = _.round(_.sum((row.data).map((dt) => { return dt[name] })), 2)
                         return <div>{ltpsum}</div>;
                     }, aggregate: (values, rows) => _.round(_.sum(values))
                 },
                 {
-                    Header: 'calval', show:true, accessor: 'calval', Footer: (row) => {
+                    Header: 'calval', show: true, accessor: 'calval', Footer: (row) => {
                         const name = row.column.Header
                         const ltpsum = _.round(_.sum((row.data).map((dt) => { return dt[name] })), 2)
                         return <div>{ltpsum}</div>;
                     }, aggregate: (values, rows) => _.round(_.sum(values))
                 },
                 {
-                    Header: 'settalmentrate', show:true, accessor: 'settalmentrate', Footer: (row) => {
+                    Header: 'settalmentrate', show: true, accessor: 'settalmentrate', Footer: (row) => {
                         const name = row.column.Header
                         const ltpsum = _.round(_.sum((row.data).map((dt) => { return dt[name] })), 2)
                         return <div>{ltpsum}</div>;
                     }, aggregate: (values, rows) => _.round(_.sum(values))
                 },
                 {
-                    Header: 'buybrokerage', show:true, accessor: 'buybrokerage', Footer: (row) => {
+                    Header: 'buybrokerage', show: true, accessor: 'buybrokerage', Footer: (row) => {
                         const name = row.column.Header
                         const ltpsum = _.round(_.sum((row.data).map((dt) => { return dt[name] })), 2)
                         return <div>{ltpsum}</div>;
                     }, aggregate: (values, rows) => _.round(_.sum(values))
                 },
                 {
-                    Header: 'sellbrokerage', show:true, accessor: 'sellbrokerage', Footer: (row) => {
+                    Header: 'sellbrokerage', show: true, accessor: 'sellbrokerage', Footer: (row) => {
                         const name = row.column.Header
                         const ltpsum = _.round(_.sum((row.data).map((dt) => { return dt[name] })), 2)
                         return <div>{ltpsum}</div>;
                     }, aggregate: (values, rows) => _.round(_.sum(values))
                 },
-                { Header: 'datetime', show:true, accessor: 'datetime', Footer: "", aggregate: (values, rows) => _.round(_.sum(values)) },
+                { Header: 'datetime', show: true, accessor: 'datetime', Footer: "", aggregate: (values, rows) => _.round(_.sum(values)) },
                 {
-                    Header: 'bfmtm', show:true, accessor: 'bfmtm', Footer: (row) => {
-                        const name = row.column.Header
-                        const ltpsum = _.round(_.sum((row.data).map((dt) => { return dt[name] })), 2)
-                        return <div>{ltpsum}</div>;
-                    }, aggregate: (values, rows) => _.round(_.sum(values))
-                },
-                {
-                    Header: 'ratio', show:true, accessor: 'ratio', Footer: (row) => {
+                    Header: 'bfmtm', show: true, accessor: 'bfmtm', Footer: (row) => {
                         const name = row.column.Header
                         const ltpsum = _.round(_.sum((row.data).map((dt) => { return dt[name] })), 2)
                         return <div>{ltpsum}</div>;
                     }, aggregate: (values, rows) => _.round(_.sum(values))
                 },
                 {
-                    Header: 'margin', show:true, accessor: 'margin', Footer: (row) => {
+                    Header: 'ratio', show: true, accessor: 'ratio', Footer: (row) => {
                         const name = row.column.Header
                         const ltpsum = _.round(_.sum((row.data).map((dt) => { return dt[name] })), 2)
                         return <div>{ltpsum}</div>;
                     }, aggregate: (values, rows) => _.round(_.sum(values))
                 },
                 {
-                    Header: 'marginamt', show:true, accessor: 'marginamt', Footer: (row) => {
+                    Header: 'margin', show: true, accessor: 'margin', Footer: (row) => {
                         const name = row.column.Header
                         const ltpsum = _.round(_.sum((row.data).map((dt) => { return dt[name] })), 2)
                         return <div>{ltpsum}</div>;
                     }, aggregate: (values, rows) => _.round(_.sum(values))
                 },
                 {
-                    Header: 'ltp', show:true, accessor: 'ltp', Footer: (row) => {
+                    Header: 'marginamt', show: true, accessor: 'marginamt', Footer: (row) => {
+                        const name = row.column.Header
+                        const ltpsum = _.round(_.sum((row.data).map((dt) => { return dt[name] })), 2)
+                        return <div>{ltpsum}</div>;
+                    }, aggregate: (values, rows) => _.round(_.sum(values))
+                },
+                {
+                    Header: 'ltp', show: true, accessor: 'ltp', Footer: (row) => {
                         const name = row.column.Header
                         const ltpsum = _.round(_.sum((row.data).map((dt) => { return dt[name] })), 2)
                         return <div>{ltpsum}</div>;
                     }
                 },
                 {
-                    Header: 'livemtm', show:true, accessor: 'livemtm', aggregate: (values, rows) => _.round(_.sum(values)), Footer: (row) => {
+                    Header: 'livemtm', show: true, accessor: 'livemtm', aggregate: (values, rows) => _.round(_.sum(values)), Footer: (row) => {
                         const name = row.column.Header
                         const ltpsum = _.round(_.sum((row.data).map((dt) => { return dt[name] })), 2)
                         return <div>{ltpsum}</div>;
                     }
                 },
                 {
-                    Header: 'todaysmtm', show:true, accessor: 'todaysmtm', Footer: (row) => {
+                    Header: 'todaysmtm', show: true, accessor: 'todaysmtm', Footer: (row) => {
                         const name = row.column.Header
                         const ltpsum = _.round(_.sum((row.data).map((dt) => { return dt[name] })), 2)
                         return <div>{ltpsum}</div>;
                     }, aggregate: (values, rows) => _.round(_.sum(values))
                 },
                 {
-                    Header: 'todaybrk', show:true, accessor: 'todaybrk', Footer: (row) => {
+                    Header: 'todaybrk', show: true, accessor: 'todaybrk', Footer: (row) => {
                         const name = row.column.Header
                         const ltpsum = _.round(_.sum((row.data).map((dt) => { return dt[name] })), 2)
                         return <div>{ltpsum}</div>;
                     }, aggregate: (values, rows) => _.round(_.sum(values))
                 },
                 {
-                    Header: 'premtm', show:true, accessor: 'premtm', Footer: (row) => {
+                    Header: 'premtm', show: true, accessor: 'premtm', Footer: (row) => {
                         const name = row.column.Header
                         const ltpsum = _.round(_.sum((row.data).map((dt) => { return dt[name] })), 2)
                         return <div>{ltpsum}</div>;
                     }, aggregate: (values, rows) => _.round(_.sum(values))
                 },
                 {
-                    Header: 'pretmtm', show:true, accessor: 'pretmtm', Footer: (row) => {
+                    Header: 'pretmtm', show: true, accessor: 'pretmtm', Footer: (row) => {
                         const name = row.column.Header
                         const ltpsum = _.round(_.sum((row.data).map((dt) => { return dt[name] })), 2)
                         return <div>{ltpsum}</div>;
                     }, aggregate: (values, rows) => _.round(_.sum(values))
                 },
                 {
-                    Header: 'netmtm', show:true, accessor: 'netmtm', Footer: (row) => {
+                    Header: 'netmtm', show: true, accessor: 'netmtm', Footer: (row) => {
                         const name = row.column.Header
                         const ltpsum = _.round(_.sum((row.data).map((dt) => { return dt[name] })), 2)
                         return <div>{ltpsum}</div>;
@@ -325,7 +332,7 @@ export default class NetPosition extends React.Component {
                     }
                 },
                 {
-                    Header: 'qtyflag', show:true, accessor: 'qtyflag', Footer: "", aggregate: (values, rows) => _.round(_.sum(values)), Cell: row => (
+                    Header: 'qtyflag', show: true, accessor: 'qtyflag', Footer: "", aggregate: (values, rows) => _.round(_.sum(values)), Cell: row => (
                         <div
                             style={{
                                 color: (row.value === "OPEN") ? "green" : "red",
@@ -336,7 +343,7 @@ export default class NetPosition extends React.Component {
                         </div>
                     )
                 },
-                { Header: 'groupname', show:true, accessor: 'groupname', Footer: "" },
+                { Header: 'groupname', show: true, accessor: 'groupname', Footer: "" },
                 {
                     Header: "Actions",
                     Cell: props => {
@@ -356,20 +363,25 @@ export default class NetPosition extends React.Component {
                     maxWidth: 100,
                     minWidth: 100
                 }
-    
+
             ]
         };
         // this.buildContextMenuJSX = this.buildContextMenuJSX.bind(this);
+        console.log("global scope", this.state.filter)
     }
+
     FilterBtn = () => {
-        // console.log("button ");
-        this.setState((prevState) => ({ filter: !prevState.filter }))
+        // this.setState((prevState) => ({ filter: !prevState.filter })) 
+        this.state.filter = !this.state.filter;
+        localStorage.setItem("filterHideShow", JSON.stringify(this.state.filter))
     }
 
     PagHideShow = () => {
         console.log("pagination");
         // this.setState({pagination: !this.state.pagination})
-        this.setState((prevState) => ({ pagination: !prevState.pagination }))
+        // this.setState((prevState) => ({ pagination: !prevState.pagination }))
+        this.state.pagination = !this.state.pagination;
+        localStorage.setItem("togglePagination", JSON.stringify(this.state.pagination))
     }
     onRow = (record) => ({
         onContextMenu: event => {
@@ -397,15 +409,6 @@ export default class NetPosition extends React.Component {
         alert(JSON.stringify(id.original))
     }
 
-    componentDidMount() {
-        if (localStorage.getItem("toggleColumns")) {
-            var toggle = JSON.parse(localStorage.getItem("toggleColumns"))
-            this.setState({ columns: [...toggle] })
-
-        }
-
-    }
-
     toggleColumn = props => {
         const newState = [...this.state.columns];
         const { name } = props.target;
@@ -417,7 +420,61 @@ export default class NetPosition extends React.Component {
         });
         // this.setState({columns:newState});
         localStorage.setItem("toggleColumns", JSON.stringify(newState));
+        console.log("hideshow", JSON.stringify(newState))
+        console.log("HIDESHOW", this.state.columns)
+        console.log("first", newState)
+        console.log("first3", this.state.columns)
     };
+
+
+    groupby = (e) => {
+        // this.setState({ grpby: e },
+        //     localStorage.setItem("grupby", JSON.stringify(this.state.grpby)));
+        console.log(e);
+        this.state.grpby = e;
+        console.log("state", this.state.grpby);
+        this.setState({ grpby: e },
+            localStorage.setItem("groupby", JSON.stringify(this.state.grpby)));
+        // localStorage.setItem("groupby", JSON.stringify(this.state.grpby));
+    }
+
+    componentDidMount() {
+        if (localStorage.getItem("toggleColumns")) {
+            var toggle = JSON.parse(localStorage.getItem("toggleColumns"))
+            this.setState({ columns: [...toggle] })
+        }
+
+        if (localStorage.getItem("filterHideShow")) {
+            var filter1 = JSON.parse(localStorage.getItem("filterHideShow"))
+            this.setState({ filter: filter1 })
+        }
+        if (localStorage.getItem("togglePagination")) {
+            var pagination1 = JSON.parse(localStorage.getItem("togglePagination"))
+            this.setState({ pagination: pagination1 })
+        }
+        // if (localStorage.getItem("grupby")) {
+        //     var groupby1 = JSON.parse(localStorage.getItem("grupby"))
+        //     this.setState({ grpby: [...groupby1] })
+        // }
+
+        if (localStorage.getItem("groupby")) {
+            console.log("grpby value received from ls");
+            var groupByValue = JSON.parse(localStorage.getItem("groupby"));
+            this.setState({ grpby: [...groupByValue] });
+
+        }
+
+
+    }
+    dropdown() {
+        var checkList = document.getElementById('list1');
+        checkList.getElementsByClassName('anchor')[0].onclick = function (evt) {
+            if (checkList.classList.contains('visible'))
+                checkList.classList.remove('visible');
+            else
+                checkList.classList.add('visible');
+        }
+    }
 
 
     render() {
@@ -434,7 +491,7 @@ export default class NetPosition extends React.Component {
         // }
         // <ProfitLoss data={this.state.ProfitLoss} />
 
-       
+
 
         const options = ["groupname", "symbol", "userid", "accountcode", "expirydate", "excode", "sripcode", "securitytype", "strikeprice"];
 
@@ -448,25 +505,41 @@ export default class NetPosition extends React.Component {
                     <CSVLink {...csvReports} className="export-btn">
                         <button><i className="fas fa-file-csv"></i></button>
                     </CSVLink> */}
-                    <div className='hide-show-column'>
-                        {this.state.columns.map((column) => (
-                            <Checkbox
-                                key={column.Header}
-                                label={column.Header}
-                                isSelected={column.show}
-                                onCheckboxChange={this.toggleColumn}
-                            />
-                        ))
-                        }
+                    {/* <div className='hide-show-column'> */}
+                    <div id="list1" className="dropdown-check-list" tabIndex="100" onClick={() => this.dropdown()}>
+                        <span className="anchor">Hide/Show Columns
+                            <i className="fa fa-caret-down"></i>
+                        </span>
+
+                        <ul className="items">
+                            {this.state.columns.map((column) => (
+                                <Checkbox
+                                    key={column.Header}
+                                    label={column.Header}
+                                    isSelected={column.show}
+                                    isLoading={true}
+                                    onCheckboxChange={this.toggleColumn}
+                                />
+                            ))
+                            }
+                        </ul>
                     </div>
+
+                    {/* </div> */}
                     <div className='grouping'>
                         <Multiselect
                             options={options}
                             isObject={false}
-                            onSelect={(e) => { this.setState({ grpby: e }) }}
+                            onSelect={this.groupby}
+                            // onSelect={(e)=>{this.setState({grpby:e})}}
+                            selectedValues={this.state.grpby}
+                            onRemove={this.groupby}
                             showCheckbox={true}
                             hidePlaceholder={true}
                             showArrow={true}
+                            isSelected={true}
+                            placeholder="Groupby Columns"
+
                         />
                     </div>
                 </div>
@@ -474,7 +547,7 @@ export default class NetPosition extends React.Component {
                     {/* {this.buildContextMenuJSX()}
                     <ContextMenuTrigger id="sample-menu"> */}
 
-                    <ReactTableFixedColumns
+                    <ReactTable
                         data={this.props.data}
                         className="-highlight"
                         style={{
@@ -492,12 +565,13 @@ export default class NetPosition extends React.Component {
                         freezeWhenExpanded={true}
                         pivotBy={this.state.grpby == "" ? [] : this.state.grpby}
                         getTrProps={this.onRow}
-                        noDataText={"Wait some time we are working on..."}
+                        noDataText={"Wait some time..."}
                     // defaultPageSize={10}
+
                     />
                     <Popup
-                        data={this.props.data}
                         {...this.state.popup}
+                        data={this.props.data}
                         rowFilter={this.state.filter}
                         buttonClick={this.FilterBtn}
                         paginationbtn={this.PagHideShow}
@@ -512,16 +586,16 @@ export default class NetPosition extends React.Component {
         )
     }
 }
-const Checkbox = ({ label, isSelected, onCheckboxChange }) => (
+const Checkbox = ({ label, isSelected, onCheckboxChange, isLoading }) => (
     <div>
         <label>
             <input
                 type="checkbox"
                 name={label}
-
                 checked={isSelected}
                 onChange={onCheckboxChange}
                 className="form-check-input"
+                style={{ marginRight: '4px' }}
             />
             {label}
         </label>

@@ -69,4 +69,33 @@ a:hover {
   }
 }
   
- 
+
+.swal-icon--error
+{
+  border-color: #fa0b0b;
+}
+.swal-icon--error__line {
+  background-color: #fa0b0b;
+}
+.swal-title {
+  color: rgb(0 0 0 / 81%);
+}
+.swal-text{
+  color: #0028ff;
+    text-transform: capitalize;
+}
+.swal-button {
+  background-color: #234250;
+}
+.swal-button:not([disabled]):hover {
+  background-color: #285265;
+}
+.swal-button:focus {
+  box-shadow: none;
+}
+/* .swal-icon--success {
+  border-color: #2d7702;
+}
+.swal-icon--success__line {
+  background-color: #66f615;
+} */

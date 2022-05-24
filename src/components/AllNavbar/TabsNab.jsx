@@ -67,155 +67,173 @@ export default class TabsNab extends React.Component {
             console.log('Closed Connection!')
         };
         return (
-            <div  className="fixed-height">
+            <div className="fixed-height">
                 {/* <Disclosure as="nav" className="bg-gray-800 shadow-lg pt-1.5 rounded text-white-500 align-center sm:m-0 tabsnab"> */}
                 <Disclosure as="nav" className=" shadow-lg pt-1.5 rounded text-white-500 align-center sm:m-0 tabsnab">
                     <div className="flex flex-wrap">
-                        <div className="w-full">
-                            <ul
-                                className="flex mb-0 list-none flex-wrap px-4 flex-row"
-                                role="tablist"
-                            >
-                                <li className="-mb-px mr-2 table-types last:mr-0 flex-auto text-center">
-                                    <a
-                                        className={
-                                            "text-xs font-bold uppercase px-2 py-2.5 shadow-lg rounded block leading-normal  " +
-                                            (this.state.openTab === 1
-                                                ? "text-white-400 bg-gray-900"
-                                                : "text-white-500 bg-gray-800")
-                                        }
-                                        onClick={e => {
-                                            e.preventDefault();
-                                            this.setState({ openTab: 1 });
-                                        }}
-                                        data-toggle="tab"
-                                        href="#link1"
-                                        role="tablist"
-                                    >
-                                        Net Position
-                                    </a>
-                                </li>
-                                <li className="-mb-px mr-2 table-types last:mr-0 flex-auto text-center">
-                                    <a
-                                        className={
-                                            "text-xs font-bold uppercase px-2 py-2.5 shadow-lg rounded block leading-normal " +
-                                            (this.state.openTab === 2
-                                                ? "text-white-400 bg-gray-900"
-                                                : "text-white-500 bg-gray-800")
-                                        }
-                                        onClick={e => {
-                                            e.preventDefault();
-                                            this.setState({ openTab: 2 });
-                                        }}
-                                        data-toggle="tab"
-                                        href="#link2"
-                                        role="tablist"
-                                    >
-                                        Profit & Loss All
-                                    </a>
-                                </li>
+                        <div className="w-full mb-3 text-light ">
+
+                            {(window.innerWidth > 700) ?
+                                (<ul
+                                    className="flex mb-0 list-none flex-wrap px-4 flex-row"
+                                    role="tablist"
+                                >
+                                    <li className="-mb-px mr-2 last:mr-0 flex-auto mb-2 text-center">
+                                        <a
+                                            className={
+                                                "text-xs font-bold uppercase px-3 py-2 shadow-lg rounded block leading-normal " +
+                                                (this.state.openTab === 1
+                                                    ? "text-gray-400 bg-gray-900"
+                                                    : "text-gray-500 bg-gray-800")
+                                            }
+                                            onClick={e => {
+                                                e.preventDefault();
+                                                this.setState({ openTab: 1 });
+                                            }}
+                                            data-toggle="tab"
+                                            href="#link1"
+                                            role="tablist"
+                                        >
+                                            Net Position
+                                        </a>
+                                    </li>
+                                    <li className="-mb-px mr-2 last:mr-0 mb-2 flex-auto text-center">
+                                        <a
+                                            className={
+                                                "text-xs font-bold uppercase px-3 py-2 shadow-lg rounded block leading-normal " +
+                                                (this.state.openTab === 2
+                                                    ? "text-gray-400 bg-gray-900"
+                                                    : "text-gray-500 bg-gray-800")
+                                            }
+                                            onClick={e => {
+                                                e.preventDefault();
+                                                this.setState({ openTab: 2 });
+                                            }}
+                                            data-toggle="tab"
+                                            href="#link2"
+                                            role="tablist"
+                                        >
+                                            Profit & Loss All
+                                        </a>
+                                    </li>
 
 
-                                <li className="-mb-px mr-2 table-types last:mr-0 flex-auto text-center">
-                                    <a
-                                        className={
-                                            "text-xs font-bold uppercase px-2 py-2.5 shadow-lg rounded block leading-normal " +
-                                            (this.state.openTab === 3
-                                                ? "text-white-400 bg-gray-900"
-                                                : "text-white-500 bg-gray-800")
-                                        }
-                                        onClick={e => {
-                                            e.preventDefault();
-                                            this.setState({ openTab: 3 });
-                                        }}
-                                        data-toggle="tab"
-                                        href="#link2"
-                                        role="tablist"
-                                    >
-                                        Profit & Loss (USD)
-                                    </a>
-                                </li>
+                                    <li className="-mb-px mr-2 last:mr-0 mb-2 flex-auto text-center">
+                                        <a
+                                            className={
+                                                "text-xs font-bold uppercase px-3 py-2 shadow-lg rounded block leading-normal " +
+                                                (this.state.openTab === 3
+                                                    ? "text-gray-400 bg-gray-900"
+                                                    : "text-gray-500 bg-gray-800")
+                                            }
+                                            onClick={e => {
+                                                e.preventDefault();
+                                                this.setState({ openTab: 3 });
+                                            }}
+                                            data-toggle="tab"
+                                            href="#link2"
+                                            role="tablist"
+                                        >
+                                            Profit & Loss (USD)
+                                        </a>
+                                    </li>
 
 
 
-                                <li className="-mb-px mr-2 table-types last:mr-0 flex-auto text-center">
-                                    <a
-                                        className={
-                                            "text-xs font-bold uppercase px-2 py-2.5 shadow-lg rounded block leading-normal " +
-                                            (this.state.openTab === 4
-                                                ? "text-white-400 bg-gray-900"
-                                                : "text-white-500 bg-gray-800")
-                                        }
-                                        onClick={e => {
-                                            e.preventDefault();
-                                            this.setState({ openTab: 4 });
-                                        }}
-                                        data-toggle="tab"
-                                        href="#link3"
-                                        role="tablist"
-                                    >
-                                        TradeBook
-                                    </a>
-                                </li>
-                                <li className="-mb-px mr-2 table-types last:mr-0 flex-auto text-center">
-                                    <a
-                                        className={
-                                            "text-xs font-bold uppercase px-2 py-2.5 shadow-lg rounded block leading-normal " +
-                                            (this.state.openTab === 5
-                                                ? "text-white-400 bg-gray-900"
-                                                : "text-white-500 bg-gray-800")
-                                        }
-                                        onClick={e => {
-                                            e.preventDefault();
-                                            this.setState({ openTab: 5 });
-                                        }}
-                                        data-toggle="tab"
-                                        href="#link3"
-                                        role="tablist"
-                                    >
-                                        Trade Book Algo
-                                    </a>
-                                </li>
-                                <li className="-mb-px mr-2 table-types last:mr-0 flex-auto text-center">
-                                    <a
-                                        className={
-                                            "text-xs font-bold uppercase px-2 py-2.5 shadow-lg rounded block leading-normal " +
-                                            (this.state.openTab === 6
-                                                ? "text-white-400 bg-gray-900"
-                                                : "text-white-500 bg-gray-800")
-                                        }
-                                        onClick={e => {
-                                            e.preventDefault();
-                                            this.setState({ openTab: 6 });
-                                        }}
-                                        data-toggle="tab"
-                                        href="#link3"
-                                        role="tablist"
-                                    >
-                                        Trade Book Manual
-                                    </a>
-                                </li>
-                                <li className="-mb-px mr-2 table-types last:mr-0 flex-auto text-center">
-                                    <a
-                                        className={
-                                            "text-xs font-bold uppercase px-2 py-2.5 shadow-lg rounded block leading-normal " +
-                                            (this.state.openTab === 7
-                                                ? "text-white-400 bg-gray-900"
-                                                : "text-white-500 bg-gray-800")
-                                        }
-                                        onClick={e => {
-                                            e.preventDefault();
-                                            this.setState({ openTab: 7 });
-                                        }}
-                                        data-toggle="tab"
-                                        href="#link3"
-                                        role="tablist"
-                                    >
-                                        Spread Book
-                                    </a>
-                                </li>
+                                    <li className="-mb-px mr-2 last:mr-0 mb-2 flex-auto text-center">
+                                        <a
+                                            className={
+                                                "text-xs font-bold uppercase px-3 py-2 shadow-lg rounded block leading-normal " +
+                                                (this.state.openTab === 4
+                                                    ? "text-gray-400 bg-gray-900"
+                                                    : "text-gray-500 bg-gray-800")
+                                            }
+                                            onClick={e => {
+                                                e.preventDefault();
+                                                this.setState({ openTab: 4 });
+                                            }}
+                                            data-toggle="tab"
+                                            href="#link3"
+                                            role="tablist"
+                                        >
+                                            TradeBook
+                                        </a>
+                                    </li>
+                                    <li className="-mb-px mr-2 last:mr-0 mb-2 flex-auto text-center">
+                                        <a
+                                            className={
+                                                "text-xs font-bold uppercase px-3 py-2 shadow-lg rounded block leading-normal " +
+                                                (this.state.openTab === 5
+                                                    ? "text-gray-400 bg-gray-900"
+                                                    : "text-gray-500 bg-gray-800")
+                                            }
+                                            onClick={e => {
+                                                e.preventDefault();
+                                                this.setState({ openTab: 5 });
+                                            }}
+                                            data-toggle="tab"
+                                            href="#link3"
+                                            role="tablist"
+                                        >
+                                            Trade Book Algo
+                                        </a>
+                                    </li>
+                                    <li className="-mb-px mr-2 last:mr-0 flex-auto mb-2 text-center">
+                                        <a
+                                            className={
+                                                "text-xs font-bold uppercase px-3 py-2 shadow-lg rounded block leading-normal " +
+                                                (this.state.openTab === 6
+                                                    ? "text-gray-400 bg-gray-900"
+                                                    : "text-gray-500 bg-gray-800")
+                                            }
+                                            onClick={e => {
+                                                e.preventDefault();
+                                                this.setState({ openTab: 6 });
+                                            }}
+                                            data-toggle="tab"
+                                            href="#link3"
+                                            role="tablist"
+                                        >
+                                            Trade Book Manual
+                                        </a>
+                                    </li>
+                                    <li className="-mb-px mr-2 last:mr-0 flex-auto mb-2 text-center">
+                                        <a
+                                            className={
+                                                "text-xs font-bold uppercase px-3 py-2 shadow-lg rounded block leading-normal " +
+                                                (this.state.openTab === 7
+                                                    ? "text-gray-400 bg-gray-900"
+                                                    : "text-gray-500 bg-gray-800")
+                                            }
+                                            onClick={e => {
+                                                e.preventDefault();
+                                                this.setState({ openTab: 7 });
+                                            }}
+                                            data-toggle="tab"
+                                            href="#link3"
+                                            role="tablist"
+                                        >
+                                            Spread Book
+                                        </a>
+                                    </li>
 
-                            </ul>
+                                </ul>) :
+                                (<select className='w-full mt-2 bg-gray-800 h-8 outline-none text-white drop-shadow-md' id='tableview' onChange={(e) => this.setState({ openTab: parseInt(e.target.value) })}>
+                                    <option value='1'>Net Position</option>
+                                    <option value='2'>Profit & Loss All</option>
+                                    <option value='3'>Profit & Loss USD</option>
+                                    <option value='4'>TradeBook</option>
+                                    <option value='5'>TradeBook Algo</option>
+                                    <option value='6'>TradeBook Manual</option>
+                                    <option value='7'>Spread Book</option>
+                                </select>)}
+                        </div>
+
+                       
+
+
+                        <div className="w-full bg-gray-800 shadow-lg  rounded ">
+
                             <div className="">
                                 <div className="px-3 py-3 flex-auto">
                                     <div className="tab-content tab-space">
@@ -236,6 +254,7 @@ export default class TabsNab extends React.Component {
                                 </div>
                             </div>
                         </div>
+
                     </div>
                 </Disclosure>
 

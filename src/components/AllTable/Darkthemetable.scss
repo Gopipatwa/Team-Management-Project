@@ -48,7 +48,7 @@
 			text-align: center;
 		}
 		.rt-th {
-			padding: 5px 5px;
+			padding: 3px 5px;
 			line-height: normal;
 			position: relative;
 			border-right: 1px solid rgba(256, 256, 256, 0.05);
@@ -84,7 +84,7 @@
 		.rt-th.-cursor-pointer {
 			cursor: pointer;
 			text-transform: capitalize;
-			background: #0d6efd;
+			background: #410495;
 		}
 		.rt-td.-cursor-pointer {
 			cursor: pointer;
@@ -165,7 +165,7 @@
 	.rt-thead.-header {
 		// box-shadow: 0 2px 15px 0 rgba(256, 256, 256, 0.15);
 		font-size: 0.96rem;
-		background: #0d6efd;
+		background: #410495;
 	}
 	.-filters {
 		.rt-tr {
@@ -320,7 +320,7 @@
 		font-size: 0.9rem;
 		text-align: center;
 		// padding-top: 2px;
-		background: #0d6efd;
+		background: #410495;
 		.rt-td {
 			border-right: 1px solid rgba(256, 256, 256, 0.05);
 			&:last-child {
@@ -541,22 +541,107 @@
 	margin-bottom: 0.5rem;
 	z-index: 1000;
 	align-items: center;
+	width: 100%;
+	@media screen and (max-width: 768px) {
+		justify-content: space-between;
+		align-items: end;
+	}
+
 	.export-btn {
 		margin-right: 0.5rem;
 		background-color: #198754;
 		border-radius: 0.25rem;
 		padding: 5px 5px 1px 6px;
+
 		i {
 			font-size: 1.3rem;
 		}
 	}
-	.hide-show-column {
-        padding-left: 8px;
-        height: 229px;
-        width: 150px;
-        border: 1px solid #ccc;
-        overflow: auto;
-    }
+
+	.dropdown-check-list {
+		display: inline-block;
+		// border-radius: 4px;
+		// position: relative;
+		// border: 1px solid #ccc;
+		// width: 14%;
+		// padding: 2.1px;
+		margin-right: 9px;
+		@media screen and (max-width: 768px) {
+			margin-right: 0;
+			width: 100%;
+		}
+		.anchor {
+			border-radius: 4px;
+			position: relative;
+			border: 1px solid #ccc;
+			width: 11.6rem;
+			padding: 2.9px;
+			display: inline-block;
+			font-size: 0.93rem;
+			color: rgb(156 163 175);
+			// &:after {
+			// 	position: absolute;
+			// 	content: "";
+			// 	border-left: 2px solid black;
+			// 	border-top: 2px solid black;
+			// 	padding: 5px;
+			// 	right: 10px;
+			// 	top: 20%;
+			// 	-moz-transform: rotate(-135deg);
+			// 	-ms-transform: rotate(-135deg);
+			// 	-o-transform: rotate(-135deg);
+			// 	-webkit-transform: rotate(-135deg);
+			// 	transform: rotate(-135deg);
+			// }
+			&:active {
+				&:after {
+					right: 8px;
+					top: 21%;
+				}
+			}
+			@media screen and (max-width: 768px) {
+				width: 94%;
+			}
+		}
+		.items {
+			// padding: 2px;
+			display: none;
+			margin: 0;
+			border-top: none;
+			background: #1f2937;
+			position: absolute;
+			z-index: 15;
+			padding-left: 8px;
+			height: 237px;
+			width: 185px;
+			border: 1px solid #ccc;
+			overflow: auto;
+			border-radius: 4px;
+			@media screen and (max-width: 768px) {
+				width: 160px;
+			}
+		}
+		.fa-caret-down {
+			position: absolute;
+			right: 6px;
+			top: 8px;
+			bottom: 0;
+			color: #fff;
+		}
+	}
+	.dropdown-check-list.visible {
+		// .anchor {
+		// 	color: #0094ff;
+		// }
+		.items {
+			display: block;
+			@media screen and (max-width: 768px) {
+				
+				font-size: 14px;
+			}
+		}
+	}
+
 	.grouping {
 		width: auto;
 		// scrollbehavior: smooth;
@@ -572,33 +657,47 @@
 			border: 1px solid #ccc;
 			border-radius: 4px;
 			position: relative;
+			height: 1.9rem;
 			// overflow: hidden;
 			// overflow-y: auto;
 			// height: 3rem;
 			// width: 17rem;
 			@media screen and (max-width: 768px) {
-				height: 2.4rem;
-				width: 10rem;
+				height: 3.4rem;
+				// width: auto;
+				width: 172px;
 				overflow: hidden;
 				overflow-y: auto;
+			}
+			.chip {
+				padding: 2px 10px;
+				position: relative;
+				bottom: 0.15rem;
+				@media screen and(max-width: 768px) {
+					padding: 0px 4px;
+					font-size: 12px;
+				}
 			}
 			input {
 				// margin-top: 10px;
 				@media screen and (max-width: 768px) {
-					margin-top: 5px;
+					margin-top: 12px;
 				}
 			}
 
-			img {
-				background-image: url("../../..//public/icon/icons8-sort-down-50.png") !important;
-			}
+			// .icon_cancel {
+			// 	// background-image: url("../../../public/icon/icons8-sort-down-50.png") !important;
+			// 	// background-image: url('../../../public/icon/icons8-sort-down-50.png') !important;
+			// 	// fill: #fff;
+			// }
 		}
 		.optionListContainer {
 			.optionContainer {
 				li {
-					padding: 3px;
+					padding: 1px;
+					padding-left: 4px;
 					@media screen and (max-width: 768px) {
-						font-size: 13px;
+						font-size: 14px;
 						padding: 5px;
 						display: flex;
 					}
@@ -611,7 +710,7 @@
 		padding: 1px;
 	}
 	.optionListContainer {
-		background: #374151 !important;
+		background: #1f2937 !important;
 		z-index: 1000;
 	}
 }

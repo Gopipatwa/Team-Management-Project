@@ -1,30 +1,47 @@
 .fixed-height {
-    height: 90vh;
+    height: 73vh;
     @media screen and (max-width: 768px) {
         height: unset;
+        // height: 100vh;
     }
 }
 .tabsnab {
     .flex-wrap {
-        ul {
-            .table-types {
-                @media screen and (max-width: 768px) {
-                    max-width: 49%;
-                    &:nth-child(even) {
-                        margin-right: 0;
-                    }
-                }
-                a {
-                    @media screen and (max-width: 768px) {
-                        padding: 10px 8px !important;
-                        margin-bottom: 8px;
-                    }
-                }
-                &:last-child {
-                    margin: 0 auto;
+        .text-light {
+            @media screen and (max-width: 768px) {
+                width: 50%;
+                margin: 0 auto;
+                select {
+                    font-size: 0.9rem;
+                    border: 1px solid #ccc;
+                    border-radius: 5px;
                 }
             }
         }
+        .rounded{
+            @media screen and (max-width: 768px) {
+                margin-bottom: 2.2rem;
+            }
+        }
+        // ul {
+        //     .table-types {
+        //         @media screen and (max-width: 768px) {
+        //             max-width: 49%;
+        //             &:nth-child(even) {
+        //                 margin-right: 0;
+        //             }
+        //         }
+        //         a {
+        //             @media screen and (max-width: 768px) {
+        //                 padding: 10px 8px !important;
+        //                 margin-bottom: 8px;
+        //             }
+        //         }
+        //         &:last-child {
+        //             margin: 0 auto;
+        //         }
+        //     }
+        // }
     }
 }
 .navbar-tab {

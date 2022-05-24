@@ -94,7 +94,7 @@
                 border-radius: 30px;
                 // transition: transform 0.25s ease;
                 transition: 0.5s;
-                cursor: zoom-in;
+                cursor: pointer !important;
                 background-size: 200% auto;
                 &:focus {
                     box-shadow: 0 0 4px 0 #0cffa8;

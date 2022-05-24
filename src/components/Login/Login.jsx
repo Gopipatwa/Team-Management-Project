@@ -5,6 +5,7 @@ import { BsFillEyeFill, BsFillEyeSlashFill } from "react-icons/bs";
 import { Navigate, useNavigate, useLocation } from 'react-router-dom';
 import axios from 'axios';
 import { authenticateLogin, getInfo } from '../ApiRouter/ApiRouter'
+import swal from 'sweetalert';
 
 const Login1 = () => {
     const history = useNavigate();
@@ -35,47 +36,74 @@ const Login1 = () => {
         let response = await authenticateLogin({
             "username": username,
             "password": password
-        })
-        console.log(response.data.token);
-        localStorage.setItem("token", response.data.token)
-        // console.log(response)
+        });
+        // console.log(response.data.token);
+        // localStorage.setItem("token", response.data.token)
+        console.log("gssf", response)
 
+        localStorage.setItem("token", response.data.token)
+        console.log(response.data.token);
         if (response.data.message === "success") {
             let userdata = await getInfo()
 
             localStorage.setItem("userdata", JSON.stringify(userdata.data))
             history("dashboard", { replace: true })
             console.log(JSON.stringify(userdata.data))
-            history.push('/')
+            // history.push('/')
+            // alert("login successfull")
         }
 
 
+        // if (response.data.message === "success") {
+        //     let userdata = await getInfo()
+        //         // localStorage.setItem("token", response.data.token)
+        //         localStorage.setItem("token", response.data.token)
+        //         console.log('token', response.data.token)
+        //         // console.log('token', response.data.token)
+        //         // swal("Success", response.data.message, "success", {
+        //         //     buttons: false,
+        //         //     timer: 2000,
+        //         // })
+        //         .then((value) => {
+        //             localStorage.setItem("userdata", JSON.stringify(userdata.data))
+
+        //             //   localStorage.setItem('user', JSON.stringify(response['user']));
+        //         });
+        //         history("dashboard", { replace: true })
+        // } else {
+        //     // swal("False", response.data.message, "error");
+        //     console.log("check you username and password")
+        // }
+
+
+        // if (response.data.message === "success") {
+        //     let userdata = await getInfo()
+        //     // localStorage.setItem("token", response.data.token)
+        //     swal("Success", response.message, "success", {
+        //         buttons: false,
+        //         timer: 2000,
+        //     })
+        //         .then((value) => {
+        //             localStorage.setItem('token', response.data.token);
+        //             localStorage.setItem('userdata', JSON.stringify([userdata.data]));
+        //             window.location.href = "/dashboard";
+        //         })
+        // } else {
+        //     swal("Failed", response.message, "error");
+        // }
+
 
     }
+
+
+
     const handleSubmit = (event) => {
         event.stopPropagation();
         event.preventDefault();
 
         Authlogin();
 
-        
-        // var { uname, pass } = Authlogin;
-        // const userData1 = Authlogin((user) => 
-        //     user.username === uname.value
 
-        // )
-        // if (userData1) {
-        //     if (userData1.password !== pass.value) {
-        //         // Invalid password
-        //         setErrorMessages({ name: "pass", message: errors.pass });
-        //     } else {
-        //         setIsSubmitted(true);
-        //     }
-
-        // } else {
-        //     // Username not found
-        //     setErrorMessages({ name: "uname", message: errors.uname });
-        // }
     };
 
     // Generate JSX code for error message
@@ -94,7 +122,8 @@ const Login1 = () => {
     // );
     return (
         <div className="form">
-            <form onSubmit={handleSubmit} className="form-group">
+          
+            <form onSubmit={handleSubmit} noValidate className="form-group">
                 <h4 className='form-heading'>Sign In</h4>
                 <div className="input-group-content">
                     <input type="text"
@@ -118,12 +147,12 @@ const Login1 = () => {
                     {renderErrorMessage("pass")}
                     <i onClick={toggleUserPasswordVisiblity} className="admin-pass-hide-show"> {shownPassword ? <BsFillEyeSlashFill className='eye-icon' /> : <BsFillEyeFill className='eye-icon' />}</i>{" "}
                 </div>
-                <div className='forgot'>
+                {/* <div className='forgot'>
                     <NavLink className="forgot-password" to="/" >
                         Forgot Password?
                     </NavLink>
-                </div>
-                <div className="button-container d-grid gap-2">
+                </div> */}
+                <div className="button-container d-grid pt-4">
 
                     <Button size="lg" type="submit"  >
                         Sign In

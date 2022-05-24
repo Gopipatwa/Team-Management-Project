@@ -59,7 +59,6 @@ export default function App() {
 
         </Routes >
       </AuthProvider>
-
       {/* {routing} */}
     </div>
 

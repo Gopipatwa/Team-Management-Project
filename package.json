@@ -8,6 +8,7 @@
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^12.1.4",
     "@testing-library/user-event": "^13.5.0",
+    "animejs": "^3.2.1",
     "antd": "^4.20.2",
     "aos": "^2.3.4",
     "axios": "^0.26.0",
@@ -23,16 +24,18 @@
     "react-dom": "^16.13.0",
     "react-hook-form": "^7.30.0",
     "react-icons": "^4.3.1",
+    "react-particles-js": "^2.7.1",
     "react-router-dom": "^6.3.0",
     "react-scripts": "5.0.0",
     "react-table": "^6.8.6",
-    "react-table-hoc-fixed-columns": "^2.3.4",
     "recoil": "^0.7.2",
     "sass": "^1.50.1",
+    "source-map-loader": "^3.0.1",
+    "sweetalert": "^2.1.2",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "set PORT=3007 && react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
